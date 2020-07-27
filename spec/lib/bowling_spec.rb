@@ -29,3 +29,9 @@ describe "ボウリングのスコア計算" do
         
     end
 end
+private
+def add_many_scores(count, pins)
+    count.times do
+        @game.add_score(pins)
+    end
+end
