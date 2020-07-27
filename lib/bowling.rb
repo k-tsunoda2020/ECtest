@@ -1,7 +1,7 @@
 class Bowling
     #インスタンスを生成するときに処理が実行される
     def initialize
-        @total_score - 0
+        @total_score = 0
     end
     
     #スコア合計を返す
