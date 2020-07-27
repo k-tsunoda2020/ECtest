@@ -19,7 +19,7 @@ describe "ボウリングのスコア計算" do
             it "20になること" do
                 @game = Bowling.new
                 
-                20.times.do
+                20.times do
                     @game.add_score(1)
                 end
                 
