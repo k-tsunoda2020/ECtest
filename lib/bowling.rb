@@ -24,24 +24,24 @@ class Bowling
     def calc_score
         @scores.each.with_index(1) do |score, index|
             #スペアかつ 最終フレーム以外の場合、スコアにボーナスを含めて合計する
-            if spare?(score)&& not_last_frame?(index)
-                @total_score += 10 + calc_spare_bonus(index)
+            if score.inject(:+) == 10 && index < 10
+                @total_score += 10 + @scores[index].first#calc_spare_bonus(index)
             else
                 @total_score += score.inject(:+)
             end
         end
     end
+    #
+    #private
+    #def spare_(score)
+    #    score.inject(:+) == 10
+    #end
     
-    private
-    def spare?(score)
-        score.inject(:+) == 10
-    end
+    #def not_last_frame_(index)
+    #    index < 10
+    #end
     
-    def not_last_frame?(index)
-        index < 10
-    end
-    
-    def calc_spare_bonus(index)
-        10 + @score[index].first
-    end
+    #def calc_spare_bonus(index)
+    #    10 + @score[index].first
+    #end
 end
