@@ -20,11 +20,11 @@ describe "ボウリングのスコア計算" do
         context "すべての投球で１ピンずつ倒した場合" do
             it "20になること" do
                #(インスタンス生成)
-               #20回0点
+               #20回1点
                 add_many_scores(20,1)
                 #合計を計算
                 @game.calc_score
-                expect(@game.total_score).to eq 1
+                expect(@game.total_score).to eq 20
             end
         end
         context "スペアをとった場合" do
